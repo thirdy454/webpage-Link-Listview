@@ -32,13 +32,21 @@ public class MainActivity extends AppCompatActivity {
         firetea = findViewById(R.id.firetea);
 
         TitleList.add("DS Home");
+        Link.add("https://www.w3schools.com/datascience/default.asp");
         TitleList.add("DS Introduction");
+        Link.add("https://www.w3schools.com/datascience/ds_introduction.asp");
         TitleList.add("DS What is Data");
+        Link.add("https://www.w3schools.com/datascience/ds_data.asp");
         TitleList.add("DS Database Table");
+        Link.add("https://www.w3schools.com/datascience/ds_database.asp");
         TitleList.add("DS Python");
+        Link.add("https://www.w3schools.com/datascience/ds_python.asp");
         TitleList.add("DS Data Frame");
+        Link.add("https://www.w3schools.com/datascience/ds_python_dataframe.asp");
         TitleList.add("DS Functions");
+        Link.add("https://www.w3schools.com/datascience/ds_functions.asp");
         TitleList.add("DS Data Preparation");
+        Link.add("https://www.w3schools.com/datascience/ds_analyze_data.asp");
 
 
         CustomAdapter customAdapter = new CustomAdapter();
@@ -52,18 +60,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                Intent intent = new Intent(Tutorial.class);
-                String link = String.valueOf(firetea.get(position));
-                Toast.makeText(MainActivity.this,link , Toast.LENGTH_SHORT).show();
+                String link = String.valueOf(TitleList.get(position));
+//                Toast.makeText(MainActivity.this,link , Toast.LENGTH_SHORT).show();
 
-////
-//                if(firetea.toString().equals("DS Home") ){
-//                    Toast.makeText(MainActivity.this,"sadasdasd", Toast.LENGTH_LONG).show();
-//                }
-
-
-//                Intent intent = new Intent(Tutorial.class);
-//                intent.putExtra("Link","https://www.w3schools.com/datascience/default.asp");
-//                startActivity(intent);
+               Intent intent = new Intent(MainActivity.this,Tutorial.class);
+               intent.putExtra("Link", String.valueOf(Link.get(position)));
+               startActivity(intent);
             }
         });
 
